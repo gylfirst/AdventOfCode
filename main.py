@@ -1,6 +1,6 @@
 from pathlib import Path
 from dotenv import load_dotenv
-from utils.inputs import store_input
+from utils.inputs import store_input, store_answer
 import os
 import importlib.util
 
@@ -37,7 +37,10 @@ if __name__ == "__main__":
     spec.loader.exec_module(solution_module)
 
     answer_part1 = solution_module.solution_1(input_value)
-    print(f"Answer for part 1: {answer_part1}")
-
     answer_part2 = solution_module.solution_2(input_value)
-    print(f"Answer for part 2: {answer_part2}")
+
+    full_answer = (
+        f"Answer for part 1: {answer_part1}\nAnswer for part 2: {answer_part2}"
+    )
+    store_answer(year, day, full_answer)
+    print(full_answer)
