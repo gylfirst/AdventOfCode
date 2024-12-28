@@ -21,10 +21,22 @@ Each year's solutions are organized into separate directories. Within each direc
 │   │   └── solution.py
 │   └── ...
 ├── .env
+├── init_script.sh
 └── README.md
 ```
 
 ## How to Run
+
+### Generate all working files
+
+If you want to work on a new year, you can create all folders and files (`solution.py` and `text.md`) simply using the initialisation script.
+
+For example for 2024:
+
+```sh
+chmod +x init_script.sh
+./init_script.sh 2024
+```
 
 ### Get your session cookie
 
