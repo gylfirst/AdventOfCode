@@ -20,6 +20,27 @@ for i in {1..25}; do
     mkdir -p $i
     touch $i/solution.py
     touch $i/text.md
+
+    # add the template to the text file
+    echo "# --- Day $i: ---" >> $i/text.md
+
+    # add the template to the solution file
+    echo '# Sub-Functions for the solution
+def template():
+    """
+    Template for the solution
+    """
+    return 0
+
+
+# Solution for part 1
+def solution_1():
+    return 0
+
+
+# Solution for part 2
+def solution_2():
+    return 0' >> $i/solution.py
 done
 
 # echo the success message
