@@ -21,11 +21,15 @@ for i in {1..25}; do
     touch $i/solution.py
     touch $i/text.md
 
-    # add the template to the text file
-    echo "# --- Day $i: ---" >> $i/text.md
+    # add the template to the text file if empty
+    if [ ! -s $i/text.md ]; then
+        echo "# --- Day $i: ---" >> $i/text.md
+        echo "Markdown template created successfully for day $i!"
+    fi
 
-    # add the template to the solution file
-    echo '# Sub-Functions for the solution
+    # add the template to the solution file if empty
+    if [ ! -s $i/solution.py ]; then
+        echo '# Sub-Functions for the solution
 def template():
     """
     Template for the solution
@@ -41,6 +45,8 @@ def solution_1(input_value: str) -> int:
 # Solution for part 2
 def solution_2(input_value: str) -> int:
     return 0' >> $i/solution.py
+        echo "Python template created successfully for day $i!"
+    fi
 done
 
 # echo the success message
