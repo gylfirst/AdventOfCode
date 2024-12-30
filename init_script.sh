@@ -34,12 +34,12 @@ def template():
 
 
 # Solution for part 1
-def solution_1():
+def solution_1(input_value: str) -> int:
     return 0
 
 
 # Solution for part 2
-def solution_2():
+def solution_2(input_value: str) -> int:
     return 0' >> $i/solution.py
 done
 
